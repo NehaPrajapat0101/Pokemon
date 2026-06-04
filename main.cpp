@@ -1,6 +1,8 @@
 #include<iostream>
 #include<string>
 #include<limits>
+#include "./main/PokemonType.hpp"
+#include "./main/PokemonChoice.hpp"
 
 using namespace std;
 
@@ -17,25 +19,6 @@ void WaitForEnter()
 {
 	cin.get(); // wait for enter key
 }
-
-// defining an enum for pokemon choice
-enum class PokemonChoice
-{
-	CHARMANDER = 1,
-	BULBASAUR,
-	SQUIRTLE,
-	PIKACHU // DEFAULT CHOICE
-};
-
-// defining an enum for pokemon types
-enum class PokemonType
-{
-	FIRE,
-	GRASS,
-	WATER,
-	ELECTRIC,
-	NORMAL
-};
 
 // pokemon class definition
 class Pokemon
