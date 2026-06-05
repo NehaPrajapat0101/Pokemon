@@ -26,12 +26,19 @@ x86/
 
 *.exe
 
+# Object files
+*.o
+*.obj
+
+# Dev-C++ generated files
+*.layout
+
 # Logs
 
 *.log
 
 # Temporary files
-
+*.log
 *.tmp
 
 # CMake (if used later)
@@ -39,3 +46,7 @@ x86/
 CMakeFiles/
 CMakeCache.txt
 cmake_install.cmake
+
+# OS files
+Thumbs.db
+.DS_Store
