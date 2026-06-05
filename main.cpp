@@ -5,104 +5,12 @@
 #include "./main/PokemonType.hpp"
 #include "./main/PokemonChoice.hpp"
 #include "./main/Utility.hpp"
+//#include "./main/Pokemon.hpp"
+#include "./main/Player.hpp"  // player class should be included after pokemon class as it requires pokemon class's object
+
 
 
 using namespace std;
-
-// pokemon class definition
-class Pokemon
-{
-	public:
-		string name;
-		PokemonType type;
-		int health;
-		
-		// constructors
-		Pokemon()  // default constructor
-		{
-			name = "Unknown";
-			type = PokemonType::NORMAL;
-			health = 50;
-			cout<<"A new Pokemon has been created using default constructor!"<<endl;
-		}
-		
-		Pokemon(string p_name, PokemonType p_type, int p_health)  // parameterized constructor
-		{
-			name = p_name;
-			type = p_type;
-			health = p_health;
-			cout<<"A new Pokemon named "<<name<<" has been created!"<<endl;
-		}
-		
-		Pokemon(const Pokemon& other)  // copy constructor
-		{
-			name = other.name;
-			type = other.type;
-			health = other.health;
-			cout<<"A new Pokemon has been copied from "<<other.name<<"!"<<endl;
-		}
-		
-		// destructor
-		~Pokemon()
-		{
-			// destructor msg removed.
-		}
-		
-		void attack()
-		{
-			cout<<name<<" attacks with a powerful move!"<<endl;
-		}
-};
-
-// player class definition
-class Player
-{
-	public:
-		// attributes
-		string name;
-		Pokemon chosen_pokemon;
-		
-		// constructors
-		Player()
-		{
-			name = "Trainer";
-//			chosen_pokemon = Pokemon();  // using default constructor of Pokemon class
-			cout<<"A new player named "<<name<<" has been created!"<<endl;
-		}
-		
-		Player(string name, Pokemon chosen_pokemon)
-		{
-			this->name = name;
-			this->chosen_pokemon = chosen_pokemon;
-			cout<<"Player "<<name<<" has been created!"<<endl;
-		}
-		
-		// method to choose a pokemon
-		void choosePokemon(int choice)
-		{
-			switch((PokemonChoice)choice)
-			{
-				case PokemonChoice::CHARMANDER:
-					chosen_pokemon = Pokemon("Charmander", PokemonType::FIRE, 100);
-					break;
-					
-				case PokemonChoice::BULBASAUR:
-					chosen_pokemon = Pokemon("Bulbasaur", PokemonType::GRASS, 100);
-					break;
-				
-				case PokemonChoice::SQUIRTLE:
-					chosen_pokemon = Pokemon("Squirtle", PokemonType::WATER, 100);
-					break;
-				
-				default:
-					chosen_pokemon = Pokemon("Pikachu", PokemonType::ELECTRIC, 100);
-					break;
-			}
-			
-			cout<<"Player "<<name<<" chose "<<chosen_pokemon.name<<"!"<<endl;
-			Utility::waitForEnter();
-		}
-};
 
 // professor class definition
 class ProfessorOak
