@@ -4,8 +4,8 @@
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = main.o main/Utility.o main/Player.o main/Pokemon.o main/WildEncounterManager.o main/Game.o main/ProfessorOak.o
-LINKOBJ  = main.o main/Utility.o main/Player.o main/Pokemon.o main/WildEncounterManager.o main/Game.o main/ProfessorOak.o
+OBJ      = main.o src/Battle/BattleManager.o src/Battle/WildEncounterManager.o src/Character/Player/Player.o src/Character/ProfessorOak.o src/Main/Game.o src/Pokemon/Pokemon.o src/Utility/Utility.o
+LINKOBJ  = main.o src/Battle/BattleManager.o src/Battle/WildEncounterManager.o src/Character/Player/Player.o src/Character/ProfessorOak.o src/Main/Game.o src/Pokemon/Pokemon.o src/Utility/Utility.o
 LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
@@ -27,20 +27,23 @@ $(BIN): $(OBJ)
 main.o: main.cpp
 	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
 
-main/Utility.o: main/Utility.cpp
-	$(CPP) -c main/Utility.cpp -o main/Utility.o $(CXXFLAGS)
+src/Battle/BattleManager.o: src/Battle/BattleManager.cpp
+	$(CPP) -c src/Battle/BattleManager.cpp -o src/Battle/BattleManager.o $(CXXFLAGS)
 
-main/Player.o: main/Player.cpp
-	$(CPP) -c main/Player.cpp -o main/Player.o $(CXXFLAGS)
+src/Battle/WildEncounterManager.o: src/Battle/WildEncounterManager.cpp
+	$(CPP) -c src/Battle/WildEncounterManager.cpp -o src/Battle/WildEncounterManager.o $(CXXFLAGS)
 
-main/Pokemon.o: main/Pokemon.cpp
-	$(CPP) -c main/Pokemon.cpp -o main/Pokemon.o $(CXXFLAGS)
+src/Character/Player/Player.o: src/Character/Player/Player.cpp
+	$(CPP) -c src/Character/Player/Player.cpp -o src/Character/Player/Player.o $(CXXFLAGS)
 
-main/WildEncounterManager.o: main/WildEncounterManager.cpp
-	$(CPP) -c main/WildEncounterManager.cpp -o main/WildEncounterManager.o $(CXXFLAGS)
+src/Character/ProfessorOak.o: src/Character/ProfessorOak.cpp
+	$(CPP) -c src/Character/ProfessorOak.cpp -o src/Character/ProfessorOak.o $(CXXFLAGS)
 
-main/Game.o: main/Game.cpp
-	$(CPP) -c main/Game.cpp -o main/Game.o $(CXXFLAGS)
+src/Main/Game.o: src/Main/Game.cpp
+	$(CPP) -c src/Main/Game.cpp -o src/Main/Game.o $(CXXFLAGS)
 
-main/ProfessorOak.o: main/ProfessorOak.cpp
-	$(CPP) -c main/ProfessorOak.cpp -o main/ProfessorOak.o $(CXXFLAGS)
+src/Pokemon/Pokemon.o: src/Pokemon/Pokemon.cpp
+	$(CPP) -c src/Pokemon/Pokemon.cpp -o src/Pokemon/Pokemon.o $(CXXFLAGS)
+
+src/Utility/Utility.o: src/Utility/Utility.cpp
+	$(CPP) -c src/Utility/Utility.cpp -o src/Utility/Utility.o $(CXXFLAGS)

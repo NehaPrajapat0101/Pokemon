@@ -1,3 +1,5 @@
+
+namespace N_Pokemon{
 // defining an enum for pokemon choice
 enum class PokemonChoice
 {
@@ -6,3 +8,5 @@ enum class PokemonChoice
 	SQUIRTLE,
 	PIKACHU // DEFAULT CHOICE
 };
+}
+

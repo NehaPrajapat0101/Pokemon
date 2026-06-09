@@ -1,3 +1,5 @@
+
+namespace N_Pokemon{
 // defining an enum for pokemon types
 enum class PokemonType
 {
@@ -8,5 +10,10 @@ enum class PokemonType
 	POISON,
 	BUG,
 	ROCK,
+	GROUND,
+	ICE,
+	FIGHTING,
 	NORMAL
 };
+}
+

@@ -1,10 +1,15 @@
-#include "./ProfessorOak.hpp"
-#include "./Player.hpp"
-#include "./Utility.hpp"
+#include "../../include/Character/ProfessorOak.hpp"
+#include "../../include/Character/Player/Player.hpp"
+#include "../../include/Utility/Utility.hpp"
 
 #include<iostream>
 
 using namespace std;
+
+using namespace N_Utility;
+using namespace N_Player;
+
+namespace N_Character{
 
 // constructor
 ProfessorOak::ProfessorOak(string name)
@@ -85,5 +90,5 @@ void ProfessorOak::explainMainQuest(Player player)
 	Utility::waitForEnter();
 	
 }
-		
+}
 		

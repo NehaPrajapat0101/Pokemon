@@ -1,3 +1,5 @@
+
+namespace N_Utility{
 class Utility
 {
 	public:
@@ -6,3 +8,5 @@ class Utility
 		static void waitForEnter();
 		static void clearInputBuffer();  // new helper fxn which empties the input buffer
 };
+}
+

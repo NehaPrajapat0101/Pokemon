@@ -1,10 +1,11 @@
 #pragma once
 #include<string>
 #include<vector>
+#include "./Pokemon.hpp"
 
 using namespace std;
 
-class Pokemon;
+namespace N_Pokemon{
 
 struct Grass
 {
@@ -12,4 +13,5 @@ struct Grass
 	int encounterRate;  // likelihood of encountering a wild pokemon out of 100
 	vector<Pokemon> wildPokemonList;  // list of wild pokemons
 };
+}
 

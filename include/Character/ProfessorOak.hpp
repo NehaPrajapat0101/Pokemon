@@ -1,8 +1,14 @@
+#pragma once
 #include<string>
 
 using namespace std;
 
-class Player;
+namespace N_Player
+{
+    class Player;
+}
+
+namespace N_Character{
 
 // professor class definition
 class ProfessorOak
@@ -15,12 +21,14 @@ class ProfessorOak
 		ProfessorOak(string name);
 		
 		// method to greet the player
-		void greetPlayer(Player &player);
+		void greetPlayer(N_Player::Player &player);
 		
 		// method to ask the player to choose a pokemon
-		void offerPokemonChoice(Player& player);
+		void offerPokemonChoice(N_Player::Player& player);
 		
 		// new method for the main quest conversation
-		void explainMainQuest(Player player);
+		void explainMainQuest(N_Player::Player player);
 		
 };
+}
+

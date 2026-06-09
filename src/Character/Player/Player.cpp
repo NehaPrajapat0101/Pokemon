@@ -1,11 +1,14 @@
-#include "./PokemonType.hpp"   
-#include "./PokemonChoice.hpp"
-#include "./Utility.hpp"
-#include "./Player.hpp"
+#include "../../../include/Pokemon/PokemonType.hpp"   
+#include "../../../include/Pokemon/PokemonChoice.hpp"
+#include "../../../include/Utility/Utility.hpp"
+#include "../../../include/Character/Player/Player.hpp"
 #include<iostream>
 
 using namespace std;
+using namespace N_Pokemon;
+using namespace N_Utility;
 
+namespace N_Player{
 
 		// constructors
 Player::Player() // default constructor
@@ -30,23 +33,24 @@ void Player::choosePokemon(int choice)
 	switch((PokemonChoice)choice)
 	{
 		case PokemonChoice::CHARMANDER:
-			chosen_pokemon = Pokemon("Charmander", PokemonType::FIRE, 100);
+			chosen_pokemon = Pokemon("Charmander", PokemonType::FIRE, 100, 20);
 			break;
 			
 		case PokemonChoice::BULBASAUR:
-			chosen_pokemon = Pokemon("Bulbasaur", PokemonType::GRASS, 100);
+			chosen_pokemon = Pokemon("Bulbasaur", PokemonType::GRASS, 100, 20);
 			break;
 		
 		case PokemonChoice::SQUIRTLE:
-			chosen_pokemon = Pokemon("Squirtle", PokemonType::WATER, 100);
+			chosen_pokemon = Pokemon("Squirtle", PokemonType::WATER, 100, 20);
 			break;
 		
 		default:
-			chosen_pokemon = Pokemon("Pikachu", PokemonType::ELECTRIC, 100);
+			chosen_pokemon = Pokemon("Pikachu", PokemonType::ELECTRIC, 100, 20);
 			break;
 	}
 	
 	cout<<"Player "<<name<<" chose "<<chosen_pokemon.name<<"!"<<endl;
 	Utility::waitForEnter();
+}
 }
 	

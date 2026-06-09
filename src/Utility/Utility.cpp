@@ -1,8 +1,10 @@
-#include "./Utility.hpp"
+#include "../../include/Utility/Utility.hpp"
 #include<iostream>
 #include<limits>
 
 using namespace std;
+
+namespace N_Utility{
 
 void Utility::clearConsole()
 {
@@ -23,3 +25,5 @@ void Utility::clearInputBuffer()
 	// clear the newline character left in buffer after cin>>choice
 	cin.ignore(numeric_limits<streamsize>::max(), '\n');
 }
+}
+

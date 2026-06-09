@@ -2,22 +2,26 @@
 #include<string>
 #include<limits> // include this header file to use numeric_limits
 
-#include "./main/PokemonType.hpp"
-#include "./main/PokemonChoice.hpp"
-#include "./main/Utility.hpp"
+#include "./include/Pokemon/PokemonType.hpp"
+#include "./include/Pokemon/PokemonChoice.hpp"
+#include "./include/Utility/Utility.hpp"
 //#include "./main/Pokemon.hpp"
-#include "./main/Player.hpp"  // player class should be included after pokemon class as it requires pokemon class's object
-#include "./main/ProfessorOak.hpp"
-#include "./main/Game.hpp"
+#include "./include/Character/Player/Player.hpp"  // player class should be included after pokemon class as it requires pokemon class's object
+#include "./include/Character/ProfessorOak.hpp"
+#include "./include/Main/Game.hpp"
 
 
 using namespace std;
+using namespace N_Pokemon;
+using namespace N_Player;
+using namespace N_Character;
+using namespace N_Main;
 
 int main()
 {
 	// creating objects for Player, ProfessorOak, Pokemon class
 	ProfessorOak professor("Professor Oak");
-	Pokemon charmander("Charmander", PokemonType::FIRE, 100); // using parameterized constructor
+	Pokemon charmander("Charmander", PokemonType::FIRE, 100, 20); // using parameterized constructor
 	Player player("Ash", charmander);
 	Game game;
 	
