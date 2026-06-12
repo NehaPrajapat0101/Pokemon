@@ -20,10 +20,10 @@ using namespace N_Main;
 int main()
 {
 	// creating objects for Player, ProfessorOak, Pokemon class
-	ProfessorOak professor("Professor Oak");
-	Pokemon charmander("Charmander", PokemonType::FIRE, 100, 20); // using parameterized constructor
-	Player player;
-	Game game;
+	ProfessorOak* professor = new ProfessorOak("Professor Oak");
+//	Pokemon charmander = new Pokemon("Charmander", PokemonType::FIRE, 100, 20); // using parameterized constructor
+	Player* player = new Player();
+	Game* game = new Game();
 	
 //	// assigning values to placeholderPokemon attributes
 //	placeholderPokemon.name = "Pikachu";
@@ -37,14 +37,19 @@ int main()
 //	professor.name = "Professor Oak";
 //	
 	// greet player and offer pokemon choices
-	professor.greetPlayer(player);
-	professor.offerPokemonChoice(player);
+	professor->greetPlayer(*player);
+	professor->offerPokemonChoice(*player);
 	
 	// explain the main quest
-	professor.explainMainQuest(player);
+	professor->explainMainQuest(*player);
 	
 	// start the main game loop
-	game.gameLoop(player);
+	game->gameLoop(*player);
+	
+	delete professor;
+//	delete charmander;
+	delete player;
+	delete game;
 	
 	return 0;
 }
