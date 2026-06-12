@@ -35,8 +35,10 @@ void ProfessorOak::greetPlayer(Player &player)
 void ProfessorOak::offerPokemonChoice(Player& player)
 {
 	cout<<name<<": First, tell me, what's your name?"<<endl;
-	getline(cin, player.name);
-	cout<<name<<": Ah, "<<player.name<<"! What a fantastic name!"<<endl;
+	string userInput;
+	getline(cin, userInput);
+	player.setName(userInput);
+	cout<<name<<": Ah, "<<player.getName()<<"! What a fantastic name!"<<endl;
 	Utility::waitForEnter();
 	cout<<name<<": You must be eager to start your adventure. But first, you'll need a Pokemone."<<endl;
 	Utility::waitForEnter();
@@ -62,27 +64,27 @@ void ProfessorOak::explainMainQuest(Player player)
 {
 	Utility::clearConsole(); // clears the console
 	
-	cout<<name<<": Oak-ay "<<player.name<<", I am about to explain you about your upcoming "<<endl;
+	cout<<name<<": Oak-ay "<<player.getName()<<", I am about to explain you about your upcoming "<<endl;
 	Utility::waitForEnter();
 	cout<<name<<": You see, becoming a Pokemon Master is no easy feat. It takes courage, wisdom"<<endl;
 	Utility::waitForEnter();
 	cout<<name<<": Your mission, should you choose to accept it (and trust me, you really don’t have a choice) is to collect all the Pokémon Badges and conquer the Pokémon League."<<endl;
 	Utility::waitForEnter();
-	cout<<player.name<<": Wait... that sounds a lot like every other Pokemon game out there."<<endl;
+	cout<<player.getName()<<": Wait... that sounds a lot like every other Pokemon game out there."<<endl;
 	Utility::waitForEnter();
-	cout<<name<<": Shhh! Dont't break the fourth wall "<<player.name<<"! This is serious business."<<endl;
+	cout<<name<<": Shhh! Dont't break the fourth wall "<<player.getName()<<"! This is serious business."<<endl;
 	Utility::waitForEnter();
 	cout<<name<<": To achieve this, you’ll need to battle wild Pokémon, challenge gym leaders, and of course, keep your Pokémon healthy at the PokeCenter."<<endl;
 	Utility::waitForEnter();
 	cout<<name<<": Along the way, you'll capture new Pokémon to strengthen your team. Just remember—there’s a limit to how many Pokémon you can carry, so choose wisely!"<<endl;
 	Utility::waitForEnter();
-	cout<<player.name<<": Sounds like a walk in the park... right?"<<endl;
+	cout<<player.getName()<<": Sounds like a walk in the park... right?"<<endl;
 	Utility::waitForEnter();
 	cout<<name<<": Hah! That’s what they all say! But beware, young Trainer, the path to victory is fraught with challenges. And if you lose a battle... well, let’s just say you'll be starting from square one."<<endl;
 	Utility::waitForEnter();
 	cout<<name<<": So, what do you say? Are you ready to become the next Pokémon Champion?"<<endl;
 	Utility::waitForEnter();
-	cout<<player.name<<": Ready as I'll ever be, Professor!"<<endl;
+	cout<<player.getName()<<": Ready as I'll ever be, Professor!"<<endl;
 	Utility::waitForEnter();
 	cout<<name<<": That's the spirit! Now, your journey begins."<<endl;
 	Utility::waitForEnter();

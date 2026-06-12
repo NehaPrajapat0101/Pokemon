@@ -15,17 +15,23 @@ namespace N_Player{
 // player class declarations only
 class Player
 {
-	public:
+	private:
 		// attributes
 		string name;
-		N_Pokemon::Pokemon chosen_pokemon;
+		N_Pokemon::Pokemon* chosen_pokemon;
 		
+	public:
 		// constructors
 		Player(); //default constructor
-		Player(string name, N_Pokemon::Pokemon chosen_pokemon); //parameterized constructor
+		Player(string name, N_Pokemon::Pokemon* chosen_pokemon); //parameterized constructor
 		
 		// method to choose a pokemon
 		void choosePokemon(int choice);
+		
+		//getter for chosen pokemon
+		N_Pokemon::Pokemon* getChosenPokemon();
+		string getName();
+		void setName(string name);
 };
 
 }

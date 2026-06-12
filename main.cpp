@@ -22,7 +22,7 @@ int main()
 	// creating objects for Player, ProfessorOak, Pokemon class
 	ProfessorOak professor("Professor Oak");
 	Pokemon charmander("Charmander", PokemonType::FIRE, 100, 20); // using parameterized constructor
-	Player player("Ash", charmander);
+	Player player;
 	Game game;
 	
 //	// assigning values to placeholderPokemon attributes

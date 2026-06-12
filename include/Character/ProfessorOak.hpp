@@ -13,10 +13,11 @@ namespace N_Character{
 // professor class definition
 class ProfessorOak
 {
-	public:
+	private:
 		// attributes
 		string name;
 		
+	public:
 		// constructor
 		ProfessorOak(string name);
 		

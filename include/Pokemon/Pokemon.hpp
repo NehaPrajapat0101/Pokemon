@@ -12,13 +12,14 @@ namespace N_Pokemon{
 
 class Pokemon
 {
-	public:
+	protected:
 		string name;
 		PokemonType type;
 		int health;
 		int maxHealth;
 		int attackPower;
-		
+	
+	public:
 		// constructors
 		Pokemon();  // default constructor
 		
@@ -31,11 +32,15 @@ class Pokemon
 		
 		void attack(Pokemon &target);
 		
+		virtual void useSpecialMove(Pokemon& target);
+		
 		void TakeDamage(int damage);
 		
 		bool isFainted();
 		
 		void heal();
+		
+		string getName();
 };
 }
 

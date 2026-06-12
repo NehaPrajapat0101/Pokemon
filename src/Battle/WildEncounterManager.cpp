@@ -29,7 +29,7 @@ Grass& WildEncounterManager::selectEnvironment(vector<Grass>& grassAreas)
 	
 	for(Grass& grass: grassAreas)
 	{
-		currentWeight = grass.encounterRate;
+		currentWeight += grass.encounterRate;
 		
 		if(roll< currentWeight)
 		{
@@ -40,7 +40,7 @@ Grass& WildEncounterManager::selectEnvironment(vector<Grass>& grassAreas)
 	return grassAreas.back();
 }
 
-Pokemon WildEncounterManager::getRandomPokemonFromGrass(const Grass& grass)
+Pokemon* WildEncounterManager::getRandomPokemonFromGrass(const Grass& grass)
 {
 	int randomIndex = rand() % grass.wildPokemonList.size();
 	return grass.wildPokemonList[randomIndex];

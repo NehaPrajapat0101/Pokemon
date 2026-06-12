@@ -49,6 +49,10 @@ void Pokemon::attack(Pokemon& target)
 	target.TakeDamage(damage);
 }
 
+void Pokemon::useSpecialMove(Pokemon& target)
+{
+}
+
 void Pokemon::TakeDamage(int damage)
 {
 	health -= damage;  // reduce hp by damage amount
@@ -71,5 +75,11 @@ void Pokemon::heal()
 {
 	health = maxHealth;
 }
+
+string Pokemon::getName()
+{
+	return name;
+}
+
 }
 

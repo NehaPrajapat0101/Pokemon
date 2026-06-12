@@ -4,10 +4,12 @@
 #include "../../include/Utility/Utility.hpp"
 #include "../../include/Battle/WildEncounterManager.hpp"
 #include "../../include/Battle/BattleManager.hpp"
+#include "../../include/Pokemon/Pokemons/PokemonsHeader.hpp"
 
 #include<iostream>
 
 using namespace std;
+using namespace N_Pokemon::N_Pokemons;
 
 using namespace N_Pokemon;
 using namespace N_Battle;
@@ -26,10 +28,10 @@ Game::Game()
 			"Forest",
 			70,
 			{
-				Pokemon("Pidgey", PokemonType::NORMAL, 40, 8),
-			 	Pokemon("Caterpie", PokemonType::BUG, 35, 5),
-			 	Pokemon("Weedle", PokemonType::BUG, 35, 6),
-			 	Pokemon("Oddish", PokemonType::GRASS, 45, 9)
+				new Pidgey(),
+				new Caterpie(),
+				new Weedle(),
+				new Oddish(),
 			}
 		}
 	);
@@ -40,10 +42,9 @@ Game::Game()
 			"Cave",
 			80,
 			{
-				Pokemon("Zubat", PokemonType::POISON, 45, 10),
-			 	Pokemon("Geodude", PokemonType::ROCK, 60, 12),
-			 	Pokemon("Onix", PokemonType::ROCK, 80, 15),
-			 	Pokemon("Diglett", PokemonType::GROUND, 40, 11)
+				new Zubat(),
+			 	new Onix(),
+			 	new Diglett()
 			}
 		}
 	);
@@ -54,10 +55,10 @@ Game::Game()
 			"River Bank",
 			60,
 			{
-				Pokemon("Psyduck", PokemonType::WATER, 50, 10),
-				Pokemon("Poliwag", PokemonType::WATER, 45, 8),
-				Pokemon("Magikarp", PokemonType::WATER, 30, 3),
-				Pokemon("Wooper", PokemonType::WATER, 50, 7)
+				new Psyduck(),
+				new Poliwag(),
+				new Magikarp(),
+				new Wooper()
 			}
 		}
 	);
@@ -68,10 +69,9 @@ Game::Game()
 			"Mountain",
 			50,
 			{
-				Pokemon("Machop", PokemonType::FIGHTING, 65, 14),
-				Pokemon("Geodude", PokemonType::ROCK, 60, 12),
-				Pokemon("Onix", PokemonType::ROCK, 80, 15),
-				Pokemon("Mankey", PokemonType::FIGHTING, 55, 13)
+				new Machop(),
+				new Geodude(),
+				new Mankey()
 			}
 		}
 	);
@@ -79,13 +79,13 @@ Game::Game()
 	grassAreas.push_back(
 		Grass
 		{
-			"Mountain",
+			"Volcano",
 			40,
 			{
-				Pokemon("Magmar", PokemonType::FIRE, 70, 16),
-				Pokemon("Slugma", PokemonType::FIRE, 60, 10),
-				Pokemon("Numel", PokemonType::FIRE, 65, 11),
-				Pokemon("Torkoal", PokemonType::FIRE, 80, 14)
+				new Magmar(),
+				new Slugma(),
+				new Numel(),
+				new Torkoal()
 			}
 		}
 	);
@@ -96,10 +96,10 @@ Game::Game()
 			"Snow Field",
 			50,
 			{
-				Pokemon("Snorunt", PokemonType::ICE, 45, 8),
-				Pokemon("Sneasel", PokemonType::ICE, 55, 13),
-				Pokemon("Swinub", PokemonType::ICE, 50, 10),
-				Pokemon("Delibird", PokemonType::ICE, 45, 9)
+				new Snorunt(),
+				new Sneasel(),
+				new Swinub(),
+				new Delibird()
 			}
 		}
 	);
@@ -118,7 +118,7 @@ void Game::gameLoop(Player& player)
 		Utility::clearConsole();
 		
 		// displaying options to player
-		cout<<"\nWhat would you like to do next, "<<player.name<<"?"<<endl;
+		cout<<"\nWhat would you like to do next, "<<player.getName()<<"?"<<endl;
 		cout<<"1. Battle Wild Pokemon"<<endl;
 		cout<<"2. Visit PokeCenter"<<endl;
 		cout<<"3. Challenge Gyms"<<endl;
@@ -136,17 +136,17 @@ void Game::gameLoop(Player& player)
 				{
 					WildEncounterManager encounterManager;
 					Grass& selectedGrass = encounterManager.selectEnvironment(grassAreas);
-					Pokemon encounteredPokemon = encounterManager.getRandomPokemonFromGrass(selectedGrass);
+					Pokemon* encounteredPokemon = encounterManager.getRandomPokemonFromGrass(selectedGrass);
 					cout<<"You are exploring the "<<selectedGrass.environmentType<<"."<<endl;
-					battleManager.startBattle(player, encounteredPokemon);
+					battleManager.startBattle(player, *encounteredPokemon);
 					break;
 				}
 			
 			case 2:
 				{
 					cout<<"You head to the PokeCenter"<<endl;
-					player.chosen_pokemon.heal();  // heals the player's pokemon
-					cout<<player.chosen_pokemon.name<<"'s health is fully restored!"<<endl;
+					player.getChosenPokemon()->heal();  // heals the player's pokemon
+					cout<<player.getChosenPokemon()->getName()<<"'s health is fully restored!"<<endl;
 					break;
 				}
 			
@@ -178,7 +178,7 @@ void Game::gameLoop(Player& player)
 		// wait for enter key before the screen is cleared and the menu is shown again
 		Utility::waitForEnter();
 	}
-	cout<<"Goodbye, "<<player.name<<"! Thanks for playing!"<<endl;
+	cout<<"Goodbye, "<<player.getName()<<"! Thanks for playing!"<<endl;
 }
 }
 

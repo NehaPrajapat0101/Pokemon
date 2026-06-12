@@ -4,8 +4,8 @@
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = main.o src/Battle/BattleManager.o src/Battle/WildEncounterManager.o src/Character/Player/Player.o src/Character/ProfessorOak.o src/Main/Game.o src/Pokemon/Pokemon.o src/Utility/Utility.o
-LINKOBJ  = main.o src/Battle/BattleManager.o src/Battle/WildEncounterManager.o src/Character/Player/Player.o src/Character/ProfessorOak.o src/Main/Game.o src/Pokemon/Pokemon.o src/Utility/Utility.o
+OBJ      = main.o src/Battle/BattleManager.o src/Battle/WildEncounterManager.o src/Character/Player/Player.o src/Character/ProfessorOak.o src/Main/Game.o src/Pokemon/Pokemon.o src/Utility/Utility.o src/Pokemon/Pokemons/Bulbasaur.o src/Pokemon/Pokemons/Caterpie.o src/Pokemon/Pokemons/Charmander.o src/Pokemon/Pokemons/Delibird.o src/Pokemon/Pokemons/Diglett.o src/Pokemon/Pokemons/Geodude.o src/Pokemon/Pokemons/Machop.o src/Pokemon/Pokemons/Magikarp.o src/Pokemon/Pokemons/Magmar.o src/Pokemon/Pokemons/Mankey.o src/Pokemon/Pokemons/Numel.o src/Pokemon/Pokemons/Oddish.o src/Pokemon/Pokemons/Onix.o src/Pokemon/Pokemons/Pidgey.o src/Pokemon/Pokemons/Pikachu.o src/Pokemon/Pokemons/Poliwag.o src/Pokemon/Pokemons/Psyduck.o src/Pokemon/Pokemons/Slugma.o src/Pokemon/Pokemons/Sneasel.o src/Pokemon/Pokemons/Snorunt.o src/Pokemon/Pokemons/Squirtle.o src/Pokemon/Pokemons/Swinub.o src/Pokemon/Pokemons/Torkoal.o src/Pokemon/Pokemons/Weedle.o src/Pokemon/Pokemons/Wooper.o src/Pokemon/Pokemons/Zubat.o
+LINKOBJ  = main.o src/Battle/BattleManager.o src/Battle/WildEncounterManager.o src/Character/Player/Player.o src/Character/ProfessorOak.o src/Main/Game.o src/Pokemon/Pokemon.o src/Utility/Utility.o src/Pokemon/Pokemons/Bulbasaur.o src/Pokemon/Pokemons/Caterpie.o src/Pokemon/Pokemons/Charmander.o src/Pokemon/Pokemons/Delibird.o src/Pokemon/Pokemons/Diglett.o src/Pokemon/Pokemons/Geodude.o src/Pokemon/Pokemons/Machop.o src/Pokemon/Pokemons/Magikarp.o src/Pokemon/Pokemons/Magmar.o src/Pokemon/Pokemons/Mankey.o src/Pokemon/Pokemons/Numel.o src/Pokemon/Pokemons/Oddish.o src/Pokemon/Pokemons/Onix.o src/Pokemon/Pokemons/Pidgey.o src/Pokemon/Pokemons/Pikachu.o src/Pokemon/Pokemons/Poliwag.o src/Pokemon/Pokemons/Psyduck.o src/Pokemon/Pokemons/Slugma.o src/Pokemon/Pokemons/Sneasel.o src/Pokemon/Pokemons/Snorunt.o src/Pokemon/Pokemons/Squirtle.o src/Pokemon/Pokemons/Swinub.o src/Pokemon/Pokemons/Torkoal.o src/Pokemon/Pokemons/Weedle.o src/Pokemon/Pokemons/Wooper.o src/Pokemon/Pokemons/Zubat.o
 LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
@@ -47,3 +47,81 @@ src/Pokemon/Pokemon.o: src/Pokemon/Pokemon.cpp
 
 src/Utility/Utility.o: src/Utility/Utility.cpp
 	$(CPP) -c src/Utility/Utility.cpp -o src/Utility/Utility.o $(CXXFLAGS)
+
+src/Pokemon/Pokemons/Bulbasaur.o: src/Pokemon/Pokemons/Bulbasaur.cpp
+	$(CPP) -c src/Pokemon/Pokemons/Bulbasaur.cpp -o src/Pokemon/Pokemons/Bulbasaur.o $(CXXFLAGS)
+
+src/Pokemon/Pokemons/Caterpie.o: src/Pokemon/Pokemons/Caterpie.cpp
+	$(CPP) -c src/Pokemon/Pokemons/Caterpie.cpp -o src/Pokemon/Pokemons/Caterpie.o $(CXXFLAGS)
+
+src/Pokemon/Pokemons/Charmander.o: src/Pokemon/Pokemons/Charmander.cpp
+	$(CPP) -c src/Pokemon/Pokemons/Charmander.cpp -o src/Pokemon/Pokemons/Charmander.o $(CXXFLAGS)
+
+src/Pokemon/Pokemons/Delibird.o: src/Pokemon/Pokemons/Delibird.cpp
+	$(CPP) -c src/Pokemon/Pokemons/Delibird.cpp -o src/Pokemon/Pokemons/Delibird.o $(CXXFLAGS)
+
+src/Pokemon/Pokemons/Diglett.o: src/Pokemon/Pokemons/Diglett.cpp
+	$(CPP) -c src/Pokemon/Pokemons/Diglett.cpp -o src/Pokemon/Pokemons/Diglett.o $(CXXFLAGS)
+
+src/Pokemon/Pokemons/Geodude.o: src/Pokemon/Pokemons/Geodude.cpp
+	$(CPP) -c src/Pokemon/Pokemons/Geodude.cpp -o src/Pokemon/Pokemons/Geodude.o $(CXXFLAGS)
+
+src/Pokemon/Pokemons/Machop.o: src/Pokemon/Pokemons/Machop.cpp
+	$(CPP) -c src/Pokemon/Pokemons/Machop.cpp -o src/Pokemon/Pokemons/Machop.o $(CXXFLAGS)
+
+src/Pokemon/Pokemons/Magikarp.o: src/Pokemon/Pokemons/Magikarp.cpp
+	$(CPP) -c src/Pokemon/Pokemons/Magikarp.cpp -o src/Pokemon/Pokemons/Magikarp.o $(CXXFLAGS)
+
+src/Pokemon/Pokemons/Magmar.o: src/Pokemon/Pokemons/Magmar.cpp
+	$(CPP) -c src/Pokemon/Pokemons/Magmar.cpp -o src/Pokemon/Pokemons/Magmar.o $(CXXFLAGS)
+
+src/Pokemon/Pokemons/Mankey.o: src/Pokemon/Pokemons/Mankey.cpp
+	$(CPP) -c src/Pokemon/Pokemons/Mankey.cpp -o src/Pokemon/Pokemons/Mankey.o $(CXXFLAGS)
+
+src/Pokemon/Pokemons/Numel.o: src/Pokemon/Pokemons/Numel.cpp
+	$(CPP) -c src/Pokemon/Pokemons/Numel.cpp -o src/Pokemon/Pokemons/Numel.o $(CXXFLAGS)
+
+src/Pokemon/Pokemons/Oddish.o: src/Pokemon/Pokemons/Oddish.cpp
+	$(CPP) -c src/Pokemon/Pokemons/Oddish.cpp -o src/Pokemon/Pokemons/Oddish.o $(CXXFLAGS)
+
+src/Pokemon/Pokemons/Onix.o: src/Pokemon/Pokemons/Onix.cpp
+	$(CPP) -c src/Pokemon/Pokemons/Onix.cpp -o src/Pokemon/Pokemons/Onix.o $(CXXFLAGS)
+
+src/Pokemon/Pokemons/Pidgey.o: src/Pokemon/Pokemons/Pidgey.cpp
+	$(CPP) -c src/Pokemon/Pokemons/Pidgey.cpp -o src/Pokemon/Pokemons/Pidgey.o $(CXXFLAGS)
+
+src/Pokemon/Pokemons/Pikachu.o: src/Pokemon/Pokemons/Pikachu.cpp
+	$(CPP) -c src/Pokemon/Pokemons/Pikachu.cpp -o src/Pokemon/Pokemons/Pikachu.o $(CXXFLAGS)
+
+src/Pokemon/Pokemons/Poliwag.o: src/Pokemon/Pokemons/Poliwag.cpp
+	$(CPP) -c src/Pokemon/Pokemons/Poliwag.cpp -o src/Pokemon/Pokemons/Poliwag.o $(CXXFLAGS)
+
+src/Pokemon/Pokemons/Psyduck.o: src/Pokemon/Pokemons/Psyduck.cpp
+	$(CPP) -c src/Pokemon/Pokemons/Psyduck.cpp -o src/Pokemon/Pokemons/Psyduck.o $(CXXFLAGS)
+
+src/Pokemon/Pokemons/Slugma.o: src/Pokemon/Pokemons/Slugma.cpp
+	$(CPP) -c src/Pokemon/Pokemons/Slugma.cpp -o src/Pokemon/Pokemons/Slugma.o $(CXXFLAGS)
+
+src/Pokemon/Pokemons/Sneasel.o: src/Pokemon/Pokemons/Sneasel.cpp
+	$(CPP) -c src/Pokemon/Pokemons/Sneasel.cpp -o src/Pokemon/Pokemons/Sneasel.o $(CXXFLAGS)
+
+src/Pokemon/Pokemons/Snorunt.o: src/Pokemon/Pokemons/Snorunt.cpp
+	$(CPP) -c src/Pokemon/Pokemons/Snorunt.cpp -o src/Pokemon/Pokemons/Snorunt.o $(CXXFLAGS)
+
+src/Pokemon/Pokemons/Squirtle.o: src/Pokemon/Pokemons/Squirtle.cpp
+	$(CPP) -c src/Pokemon/Pokemons/Squirtle.cpp -o src/Pokemon/Pokemons/Squirtle.o $(CXXFLAGS)
+
+src/Pokemon/Pokemons/Swinub.o: src/Pokemon/Pokemons/Swinub.cpp
+	$(CPP) -c src/Pokemon/Pokemons/Swinub.cpp -o src/Pokemon/Pokemons/Swinub.o $(CXXFLAGS)
+
+src/Pokemon/Pokemons/Torkoal.o: src/Pokemon/Pokemons/Torkoal.cpp
+	$(CPP) -c src/Pokemon/Pokemons/Torkoal.cpp -o src/Pokemon/Pokemons/Torkoal.o $(CXXFLAGS)
+
+src/Pokemon/Pokemons/Weedle.o: src/Pokemon/Pokemons/Weedle.cpp
+	$(CPP) -c src/Pokemon/Pokemons/Weedle.cpp -o src/Pokemon/Pokemons/Weedle.o $(CXXFLAGS)
+
+src/Pokemon/Pokemons/Wooper.o: src/Pokemon/Pokemons/Wooper.cpp
+	$(CPP) -c src/Pokemon/Pokemons/Wooper.cpp -o src/Pokemon/Pokemons/Wooper.o $(CXXFLAGS)
+
+src/Pokemon/Pokemons/Zubat.o: src/Pokemon/Pokemons/Zubat.cpp
+	$(CPP) -c src/Pokemon/Pokemons/Zubat.cpp -o src/Pokemon/Pokemons/Zubat.o $(CXXFLAGS)

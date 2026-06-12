@@ -11,7 +11,7 @@ class WildEncounterManager
 		
 		N_Pokemon::Grass& selectEnvironment(std::vector<N_Pokemon::Grass>& grassAreas);
 		
-		N_Pokemon::Pokemon getRandomPokemonFromGrass(const N_Pokemon::Grass& grass);
+		N_Pokemon::Pokemon* getRandomPokemonFromGrass(const N_Pokemon::Grass& grass);
 };
 }
 
