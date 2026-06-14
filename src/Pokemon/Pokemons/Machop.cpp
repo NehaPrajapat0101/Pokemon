@@ -10,7 +10,7 @@ namespace N_Pokemon
 		using namespace std;
 		
 		Machop::Machop()
-			:Pokemon("Machop", PokemonType::FIGHTING, 100, 20)
+			:Pokemon("Machop", PokemonType::FIGHTING, 150, 40)
 		{
 		}
 		

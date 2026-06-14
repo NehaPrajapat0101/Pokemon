@@ -10,7 +10,7 @@ namespace N_Pokemon
 		using namespace std;
 		
 		Caterpie::Caterpie()
-			:Pokemon("Caterpie", PokemonType::BUG, 100, 10)
+			:Pokemon("Caterpie", PokemonType::BUG, 100, 15)
 		{
 		}
 		

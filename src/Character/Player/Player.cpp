@@ -38,7 +38,7 @@ void Player::choosePokemon(int choice)
 	{
 		
 		case PokemonChoice::CHARMANDER:
-			chosen_pokemon = new N_Pokemon::N_Pokemons::Charmander();;
+			chosen_pokemon = new N_Pokemon::N_Pokemons::Charmander();
 			break;
 			
 		case PokemonChoice::BULBASAUR:

@@ -180,5 +180,11 @@ void Game::gameLoop(Player& player)
 	}
 	cout<<"Goodbye, "<<player.getName()<<"! Thanks for playing!"<<endl;
 }
+
+Game::~Game()
+{
+	delete wildPokemon;
+}
+
 }
 

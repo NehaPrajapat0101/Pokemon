@@ -13,7 +13,9 @@ namespace N_Pokemon
 			public:
 				Charmander();
 				
-				void useSpecialMove(Pokemon& target) override;
+//				void useSpecialMove(Pokemon& target) override;
+				
+				void attack(Pokemon& target, Move selectedMove) override;
 				
 		};
 	}

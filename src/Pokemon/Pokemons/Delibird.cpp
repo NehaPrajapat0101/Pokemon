@@ -10,7 +10,7 @@ namespace N_Pokemon
 		using namespace std;
 		
 		Delibird::Delibird()
-			:Pokemon("Delibird", PokemonType::ICE, 100, 18)
+			:Pokemon("Delibird", PokemonType::ICE, 100, 18, {Move("NORMAL ATTACK", 20)})
 		{
 		}
 		

@@ -10,7 +10,7 @@ namespace N_Pokemon
 		using namespace std;
 		
 		Oddish::Oddish()
-			:Pokemon("Oddish", PokemonType::GRASS, 100, 12)
+			:Pokemon("Oddish", PokemonType::GRASS, 110, 28)
 		{
 		}
 		

@@ -10,7 +10,7 @@ namespace N_Pokemon
 		using namespace std;
 		
 		Sneasel::Sneasel()
-			:Pokemon("Sneasel", PokemonType::ICE, 100, 22)
+			:Pokemon("Sneasel", PokemonType::ICE, 150, 50)
 		{
 		}
 		

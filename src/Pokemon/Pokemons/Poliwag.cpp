@@ -10,7 +10,7 @@ namespace N_Pokemon
 		using namespace std;
 		
 		Poliwag::Poliwag()
-			:Pokemon("Poliwag", PokemonType::BUG, 100, 15)
+			:Pokemon("Poliwag", PokemonType::BUG, 120, 32)
 		{
 		}
 		

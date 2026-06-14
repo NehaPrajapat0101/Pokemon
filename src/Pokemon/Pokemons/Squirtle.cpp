@@ -10,20 +10,24 @@ namespace N_Pokemon
 		using namespace std;
 		
 		Squirtle::Squirtle()
-			:Pokemon("Squirtle", PokemonType::WATER, 100, 35)
+			:Pokemon("Squirtle", PokemonType::WATER, 100, 35, {Move("RAPID SPIN", 80)})
 		{
 		}
 		
-		void Squirtle::waterSplash(Pokemon& target)
+		void Squirtle::attack(Pokemon& target, Move selectedMove)
 		{
-			cout<<name<<" uses Water Splash on "<<target.getName()<<"!"<<endl;
-			target.TakeDamage(20);
+			
+			int missedAttack = rand() % 100;
+			
+			if(selectedMove.moveName == "RAPID SPIN" && missedAttack < 70)
+			{
+				std::cout<<"Oh! God "<<target.getName()<<" dodged the rapid spin hit!"<<endl;
+			}
+			else
+			{
+				Pokemon::attack(target, selectedMove);
+			}
 		}
-		
-		void Squirtle::useSpecialMove(Pokemon &target)
-        {
-            waterSplash(target);
-        }
 	}
 }
 

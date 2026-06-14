@@ -10,7 +10,7 @@ namespace N_Pokemon
 		using namespace std;
 		
 		Wooper::Wooper() 
-			:Pokemon("Wooper", PokemonType::WATER, 100, 14)
+			:Pokemon("Wooper", PokemonType::WATER, 120, 30)
 		{
 		}
 		

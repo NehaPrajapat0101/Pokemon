@@ -10,7 +10,7 @@ namespace N_Pokemon
 		using namespace std;
 		
 		Diglett::Diglett()
-			:Pokemon("Diglett", PokemonType::BUG, 100, 16)
+			:Pokemon("Diglett", PokemonType::BUG, 100, 16, {Move("NORMAL ATTACK", 20)})
 		{
 		}
 		

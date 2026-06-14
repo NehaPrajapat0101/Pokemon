@@ -10,7 +10,7 @@ namespace N_Pokemon
 		using namespace std;
 		
 		Numel::Numel()
-			:Pokemon("Numel", PokemonType::FIRE, 100, 16)
+			:Pokemon("Numel", PokemonType::FIRE, 100, 16, {Move("NORMAL ATTACK", 20)})
 		{
 		}
 		

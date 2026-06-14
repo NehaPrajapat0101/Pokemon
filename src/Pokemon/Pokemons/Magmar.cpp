@@ -10,7 +10,7 @@ namespace N_Pokemon
 		using namespace std;
 		
 		Magmar::Magmar()
-			:Pokemon("Magmar", PokemonType::FIRE, 100, 22)
+			:Pokemon("Magmar", PokemonType::FIRE, 170, 50)
 		{
 		}
 		

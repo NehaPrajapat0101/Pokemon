@@ -10,7 +10,7 @@ namespace N_Pokemon
 		using namespace std;
 		
 		Mankey::Mankey()
-			:Pokemon("Mankey", PokemonType::FIGHTING, 100, 17)
+			:Pokemon("Mankey", PokemonType::FIGHTING, 100, 17, {Move("NORMAL ATTACK", 20)})
 		{
 		}
 		

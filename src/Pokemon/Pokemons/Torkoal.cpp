@@ -10,7 +10,7 @@ namespace N_Pokemon
 		using namespace std;
 		
 		Torkoal::Torkoal()
-			:Pokemon("Torkoal", PokemonType::FIRE, 100, 24)
+			:Pokemon("Torkoal", PokemonType::FIRE, 200, 55)
 		{
 		}
 		

@@ -10,7 +10,7 @@ namespace N_Pokemon
 		using namespace std;
 		
 		Pidgey::Pidgey()
-			:Pokemon("Pidgey", PokemonType::NORMAL, 100, 35)
+			:Pokemon("Pidgey", PokemonType::NORMAL, 100, 25)
 		{
 		}
 		

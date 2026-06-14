@@ -21,35 +21,34 @@ void BattleManager::startBattle(N_Player::Player &player, N_Pokemon::Pokemon &wi
 	battleState.wildPokemon = &wildPokemon;
 	battleState.playerTurn = true; // player starts first
 	battleState.battleOngoing = true;
-	cout<<"A wild "<<wildPokemon.getName()<<" has appeared!"<<endl;
+	cout<<"A wild "<<wildPokemon.getName()<<" has appeared!\n"<<endl;
+	cout<<battleState.playerPokemon->getName()<<"'s HP: "<<battleState.playerPokemon->getHealth()<<endl;
+	cout<<battleState.wildPokemon->getName()<<"'s HP: "<<battleState.wildPokemon->getHealth()<<endl<<endl;
 	
 	battle();
 }
 
 void BattleManager::battle()
 {
-	
+	updateBattleState();
 	
 	// check if any pokemon fainted
 	while(battleState.battleOngoing)
 	{
-	
-		int roll = rand() % 100;
+		// update battle turn after the turn
+		updateBattleState();
 		
 		if(battleState.playerTurn)
 		{
-			// player's turn to attack
-			if(roll < 20)
-			{
-				battleState.playerPokemon -> useSpecialMove(*battleState.wildPokemon);
-			}
-			else
-			{
-				battleState.playerPokemon -> attack(*battleState.wildPokemon); 
-			}
+			// player must select his/her move to attack
+			battleState.playerPokemon -> selectAndUseMove(battleState.wildPokemon); 
+			
 		}
 		else
 		{
+			Utility::waitForEnter();
+			
+			int roll = rand() % 100; // only enemy is going to use normal attack and special move sometimes
 			// wild pokemon's turn to attack
 			if(roll < 20)
 			{
@@ -61,13 +60,14 @@ void BattleManager::battle()
 			}
 		}
 		
-		// update battle turn after the turn
-		updateBattleState();
-		
 		// switch turns
 		battleState.playerTurn = !battleState.playerTurn;
 		
-		Utility::waitForEnter();  // pause to show the result of each round
+		// update battle turn after the turn
+		updateBattleState();
+		
+		
+		N_Utility::Utility::clearInputBuffer();
 		
 	}
 	

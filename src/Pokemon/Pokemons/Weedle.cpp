@@ -10,7 +10,7 @@ namespace N_Pokemon
 		using namespace std;
 		
 		Weedle::Weedle()
-			:Pokemon("Weedle", PokemonType::BUG, 100, 10)
+			:Pokemon("Weedle", PokemonType::BUG, 100, 15)
 		{
 		}
 		

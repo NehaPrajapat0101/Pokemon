@@ -10,7 +10,7 @@ namespace N_Pokemon
 		using namespace std;
 		
 		Magikarp::Magikarp()
-			:Pokemon("Magikarp", PokemonType::WATER, 100, 8)
+			:Pokemon("Magikarp", PokemonType::WATER, 100, 10)
 		{
 		}
 		

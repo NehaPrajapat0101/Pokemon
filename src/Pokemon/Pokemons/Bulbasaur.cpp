@@ -10,19 +10,30 @@ namespace N_Pokemon
 		using namespace std;
 		
 		Bulbasaur::Bulbasaur()
-			:Pokemon("Bulbasaur", PokemonType::GRASS, 100, 35)
+			:Pokemon("Bulbasaur", PokemonType::GRASS, 100, 35, {Move("VINE WHIP", 25), Move("TACKLE", 10)})
 		{
 		}
 		
-		void Bulbasaur::useSpecialMove(Pokemon& target)
+		void Bulbasaur::attack(Pokemon& target, Move selectedMove)
 		{
-			vineWhip(target);
-		}
-		
-		void Bulbasaur::vineWhip(Pokemon& target)
-		{
-			cout<<name<<" uses Vine Whip on "<<target.getName()<<"!"<<endl;
-			target.TakeDamage(20);
+			Pokemon::attack(target, selectedMove);
+			
+			if(selectedMove.moveName == "VINE WHIP")
+			{
+				// chance for second hit(50% chance)
+				
+				int secondHitChance = rand() % 100;
+				
+				if(secondHitChance > 70)
+				{
+					std::cout<<name<<" hits again with a second "<<selectedMove.moveName<<"!"<<endl;
+					Pokemon::attack(target, selectedMove);
+				}
+				else
+				{
+					std::cout<<target.getName()<<" dodged the second hit!"<<endl;
+				}
+			}
 		}
 	}
 }

@@ -10,7 +10,7 @@ namespace N_Pokemon
 		using namespace std;
 		
 		Onix::Onix()
-			:Pokemon("Onix", PokemonType::BUG, 100, 18)
+			:Pokemon("Onix", PokemonType::BUG, 180, 45)
 		{
 		}
 		
