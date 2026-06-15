@@ -36,6 +36,35 @@ This project is being developed to practice Object-Oriented Programming (OOP) co
 * Polymorphism
 * Enums and Structured Code Organization
 
+## Project Architecture
+Game
+├── Character
+│   └── Player
+│
+├── Battle
+│   └── BattleManager
+│
+├── Pokemon
+│   ├── Pokemon (Base Class)
+│   ├── Bulbasaur
+│   ├── Charmander
+│   ├── Squirtle
+│   └── Wild Pokemon Classes
+│
+├── Status Effects
+│   ├── IStatusEffect
+│   └── ParalyzedEffect
+│
+├── Environment
+│   ├── Forest
+│   ├── Cave
+│   ├── Mountain
+│   ├── Volcano
+│   ├── RiverBank
+│   └── SnowField
+│
+└── Utility
+
 ## Author
 
 Neha Prajapat
