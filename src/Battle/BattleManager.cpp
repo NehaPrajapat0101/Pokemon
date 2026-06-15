@@ -38,13 +38,13 @@ void BattleManager::battle()
 		// update battle turn after the turn
 		updateBattleState();
 		
-		if(battleState.playerTurn)
+		if(battleState.playerTurn  &&  battleState.playerPokemon->canAttack())
 		{
 			// player must select his/her move to attack
 			battleState.playerPokemon -> selectAndUseMove(battleState.wildPokemon); 
 			
 		}
-		else
+		else if(battleState.wildPokemon->canAttack())
 		{
 			Utility::waitForEnter();
 			

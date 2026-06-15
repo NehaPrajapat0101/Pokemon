@@ -16,6 +16,7 @@ namespace N_Pokemon
 		health = 50;
 		maxHealth = 100;
 		attackPower = 20;
+		appliedEffect = nullptr;
 		cout<<"A new Pokemon has been created using default constructor!"<<endl;
 	}
 	
@@ -27,6 +28,7 @@ namespace N_Pokemon
 		attackPower = p_attackPower;
 		maxHealth = 100;
 		moves = p_moves;
+		appliedEffect = nullptr;
 		
 	//	cout<<"A new Pokemon named "<<name<<" has been created!"<<endl;
 	}
@@ -38,6 +40,7 @@ namespace N_Pokemon
 		health = p_maxHealth;
 		attackPower = p_attackPower;
 		maxHealth = p_maxHealth;
+		appliedEffect = nullptr;
 		
 	//	cout<<"A new Pokemon named "<<name<<" has been created!"<<endl;
 	}
@@ -48,6 +51,7 @@ namespace N_Pokemon
 		type = other.type;
 		health = other.health;
 		attackPower = other.attackPower;
+		appliedEffect = nullptr;  
 	//	cout<<"A new Pokemon has been copied from "<<other.name<<"!"<<endl;
 	}
 	
@@ -55,6 +59,49 @@ namespace N_Pokemon
 	Pokemon::~Pokemon()
 	{
 		// destructor msg removed.
+	}
+	
+	void Pokemon::reducedAttackPower(int reduced_damage)
+	{
+		for(int i=0; i<moves.size(); i++)
+		{
+			moves[i].movePower -= reduced_damage;
+			
+			if(moves[i].movePower < 0)
+				moves[i].movePower = 0;
+		}
+	}
+	
+	bool Pokemon::canAttack()
+	{
+		if(appliedEffect == nullptr)
+			return true;
+		else
+			return appliedEffect->turnEndEffect(this);
+	}
+	
+	bool Pokemon::canApplyEffect()
+	{
+		return (appliedEffect == nullptr);
+	}
+	
+	void Pokemon::applyEffect(N_StatusEffects::StatusEffectType effectToApply)
+	{
+		switch (effectToApply)
+		{
+			case N_StatusEffects::StatusEffectType::PARALYZED:
+				appliedEffect = new N_StatusEffects::ParalyzedEffect();
+				appliedEffect->applyEffect(this);
+				break;
+				
+			default:
+				appliedEffect = nullptr;
+		}			
+	}
+	  
+	void Pokemon::clearEffect(Pokemon* target)
+	{
+		appliedEffect = nullptr;
 	}
 	
 	void Pokemon::attack(Pokemon &target, Move selectedMove)
@@ -103,6 +150,12 @@ namespace N_Pokemon
 		health = maxHealth;
 	}
 	
+	void Pokemon::heal(int amount)
+	{
+		health += amount;
+		cout<<this->getName()<<"'s health got incremented by "<<amount<<" HP."<<endl;
+	}
+	
 	string Pokemon::getName()
 	{
 		return name;
@@ -116,6 +169,11 @@ namespace N_Pokemon
 	int Pokemon::getHealth()
 	{
 		return health;
+	}
+	
+	int Pokemon::getAttackPower()
+	{
+		return attackPower;
 	}
 	
 	void Pokemon::selectAndUseMove(Pokemon* target)
